@@ -18,7 +18,9 @@ jobs:
   include:
     - stage: Testing
       name: unit
-      go: "1.8"
+      go:
+        - "1.8"
+        - "1.9"
       script: echo "unit script"
     - name: QQ
       before_install: echo "QQ_before_install"
