@@ -1,9 +1,8 @@
 language: go
 sudo: required
 go:
-  - "1.8"
   - "1.9"
-
+  - "1.8"
 
 before_install:
   - echo "before_install"
@@ -14,3 +13,14 @@ before_script:
   - echo "before_script"
 script:
   - echo "script"
+
+jobs:
+  include:
+    - stage: Testing
+      name: unit
+      go: "1.8"
+      script: echo "unit script"
+    - name: QQ
+      before_install: echo "QQ_before_install"
+    - stage: relase
+      script: echo "release"
