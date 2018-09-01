@@ -21,7 +21,9 @@ jobs:
       script: echo "unit script"
     - name: Integration-Testing
       before_install: echo "Integration-Testing_before_install"
+    - stage: Docker
+      name: Docker-Build
+      script: echo "docker build"
     - stage: Deploy
-      script: echo "release"
-    - stage: Build Docker Image
+      name: deploy appliaction
       script: echo "release"
