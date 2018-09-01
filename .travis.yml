@@ -1,6 +1,9 @@
 language: go
 sudo: required
 
+go:
+  - "1.8"
+
 before_install:
   - echo "before_install"
 install:
