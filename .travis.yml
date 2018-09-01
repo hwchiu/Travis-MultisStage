@@ -1,8 +1,5 @@
 language: go
 sudo: required
-go:
-  - "1.9"
-  - "1.8"
 
 before_install:
   - echo "before_install"
@@ -16,11 +13,12 @@ script:
 
 jobs:
   include:
-    - stage: Testing
-      name: unit
-      go: "1.8"
+    - stage: Custom Testing
+      name: Unit-Testing
       script: echo "unit script"
-    - name: QQ
-      before_install: "QQ_before_install"
-    - stage: relase
+    - name: Integration-Testing
+      before_install: echo "Integration-Testing_before_install"
+    - stage: Deploy
+      script: echo "release"
+    - stage: Build Docker Image
       script: echo "release"
